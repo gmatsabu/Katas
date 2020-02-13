@@ -1,0 +1,117 @@
+#Hello.py
+def Hello(Person_name):
+    response = "Hello" + " " + Person_name + "!"
+    return response
+results = Hello("Teboho")
+print(results)    
+
+
+#check_if_a_number_is_even.py
+def even_or_odd(number):
+    even_result = "{0} is even".format(number)
+    odd_result = "{0} is odd".format(number)
+    if(number % 2)==0:
+        return even_result
+    else:
+        return odd_result
+check = even_or_odd(4)
+
+print(check)
+
+
+#Draw_a_square.py
+def triangle(number_rows):
+    triangle_size = ''
+    for row_count in range(abs(number_rows) + 2):
+        print("#" * row_count)
+    return triangle_size
+check = triangle(5)
+print(check)     
+
+#Draw_a_right_handed_triangle.py
+def triangle(number_rows):
+    triangle_size =''
+    for row_count in range(abs(number_rows)+1):
+        print("#"*row_count)
+    return triangle_size    
+check = triangle(4)
+print(check) 
+
+
+
+#Draw_an_isosceles_triangle.py
+def isosceles(number_row):
+    isosceles_row = ''
+    number_row = 2*number_row - 2
+
+    for count_row in range (0,number_row):
+        for column in range(0,number_row):
+            print(end=" ")
+        number_row = number_row -1
+        for column in range(0,count_row+1):
+            print("# ",end="")
+        print("\r")
+    return isosceles_row
+check = isosceles(4)
+
+print(check)
+
+
+#find_the_longest_string.py
+def longest(w):
+    longest_word = ''
+    words = list(w.split(" "))
+    length= []
+    for word in words:
+        length.append(len(word))
+    maximum = max(length)
+    returnlist =[]
+    for long in words:
+        if len(long) == maximum:
+            returnlist.append(long)    
+            list_word = long
+            print(list_word)
+    return longest_word        
+check = longest("Find the longest string")
+print(check)    
+
+
+combine_two_lists/arrays.py
+def combine(number1,number2):
+    len1 = len(number1)
+    len2 = len(number2)
+    join = []
+    
+    if len1 > len2:
+        for list in range(len2):
+            join.append(number1[list])
+            join.append(number2[list])
+       
+        for remaining_index in range(list,len1):
+            join.append(number1[remaining_index])
+    elif len1 < len2:
+        list = 0
+        for list in range(len1):
+            join.append(number1[list])
+            join.append(number2[list])
+        for remaining_index in range(list,len2):
+            join.append(number2[remaining_index])
+    else:
+        if len1 == len2:
+            for list in range(len1):
+                join.append(number1[list])
+                join.append(number2[list])
+    return join
+check = combine([1,2,3],[11,22,33])
+print(check)
+
+
+#Frame_some_text.py
+test = "Dream code sleep"
+def frame(words): 
+    size = len(max(words, key=len))
+    print('*' * (size + 4))  
+    for word in words:
+        print('* {a:<{b}} *'.format(a=word, b=size))
+    print('*' * (size + 4))
+print(frame(test.split(" ")))
